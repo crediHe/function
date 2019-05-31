@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+    <generatorConfiguration>
+        <!--1 . 配置数据库驱动所在目录 , 改为自己的-->
+        <!--F:\maven_warehouse\repository\mysql\mysql-connector-java\5.1.39\mysql-connector-java-5.1.39.jar-->
+        <classPathEntry location="F:/maven_warehouse/repository/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar"/>
+        <context id="DB2Tables" targetRuntime="MyBatis3">
+            <commentGenerator>
+                <property name="suppressDate" value="true"/>
+                <property name="suppressAllComments" value="true"/>
+            </commentGenerator>
+            <!--2 .数据库链接地址账号密码-->
+            <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/mybatis" userId="root" password="123456">
+            </jdbcConnection>
+            <javaTypeResolver>
+                <property name="forceBigDecimals" value="false"/>
+            </javaTypeResolver>
+            <!--3 .设置生成 Model 类存放位置 , 以及java代码的真是文件夹-->
+            <javaModelGenerator targetPackage="com.credi.po" targetProject="F:/code02/SpringAndMybatis/src/main/java"
+            >
+                <property name="enableSubPackages" value="true"/>
+                <property name="trimStrings" value="true"/>
+            </javaModelGenerator>
+            <!--4 .生成映射文件mapper.xml文件的存放位置和代码的真实文件夹-->
+            <sqlMapGenerator targetPackage="com.credi.mapper"
+                             targetProject="F:/code02/SpringAndMybatis/src/main/java">
+                <property name="enableSubPackages" value="true"/>
+            </sqlMapGenerator>
+            <!--5 .生成 Dao 类(mapper.xml对应的接口)存放位置-->
+            <javaClientGenerator type="XMLMAPPER" targetPackage="com.credi.dao" targetProject="F:/code02/SpringAndMybatis/src/main/java">
+                <property name="enableSubPackages" value="true"/>
+            </javaClientGenerator>
+
+            <!--6 .在 tableName属性标签中配置要生成代码的数据库表 , 在domainObjectName中配置要生成代码的类的名称-->
+            <table tableName="account" domainObjectName="Account" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        </context>
+    </generatorConfiguration>
