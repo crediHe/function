@@ -1,0 +1,16 @@
+## 服务器端口配置
+server:
+  port: 8989
+
+##编码格式
+#spring.http.encoding.force=true
+#spring.http.encoding.charset=UTF-8
+#spring.http.encoding.enabled=true
+#server.tomcat.uri-encoding=UTF-8
+#
+### freemarker 模本配置
+###  配置模板文件加载路径 默认加载 classpath:/views/下视图
+#spring.freemarker.template-loader-path=classpath:/views/
+#spring.freemarker.charset=UTF-8
+#spring.freemarker.content-type=text/html
+#spring.freemarker.suffix=.ftl
