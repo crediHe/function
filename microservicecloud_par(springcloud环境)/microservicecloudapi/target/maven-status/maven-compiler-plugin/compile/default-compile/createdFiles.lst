@@ -1,0 +1,4 @@
+com\credi\service\DeptClientServiceFallbackFactory$1.class
+com\credi\entities\Dept.class
+com\credi\service\DeptClientService.class
+com\credi\service\DeptClientServiceFallbackFactory.class
